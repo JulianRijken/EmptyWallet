@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Resources\Bg\**" />
+    <Compile Remove="Resources\Icons\**" />
+    <EmbeddedResource Remove="Resources\Bg\**" />
+    <EmbeddedResource Remove="Resources\Icons\**" />
+    <None Remove="Resources\Bg\**" />
+    <None Remove="Resources\Icons\**" />
+    <Page Remove="Resources\Bg\**" />
+    <Page Remove="Resources\Icons\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Data\games.json" />
+    <None Remove="Resources\Thumb\fallback.jpg" />
+    <None Remove="Resources\Thumb\Test.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Data\games.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Thumb\fallback.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
